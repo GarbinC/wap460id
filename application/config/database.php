@@ -48,10 +48,15 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'hdm-025.hichina.com';
-$db['default']['username'] = 'hdm0250753';
-$db['default']['password'] = '460id460';
-$db['default']['database'] = 'hdm0250753_db';
+//$db['default']['hostname'] = 'hdm-025.hichina.com';
+//$db['default']['username'] = 'hdm0250753';
+//$db['default']['password'] = '460id460';
+//$db['default']['database'] = 'hdm0250753_db';
+$db['default']['hostname'] = 'localhost';
+$db['default']['username'] = 'root';
+$db['default']['password'] = 'root';
+$db['default']['database'] = 'dcwap';
+
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
