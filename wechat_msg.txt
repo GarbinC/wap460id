@@ -1,0 +1,5 @@
+qq:
+
+qq:
+AppID(应用ID) :wxbb700f93594873cb
+AppSecret(应用密钥) : 057790d552004231f169c285e14335e7
