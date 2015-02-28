@@ -418,6 +418,27 @@ jQuery(document).ready(function() {
       }
    });
 
+   $( '#user_save').validate({
+      'rules':{},
+      'messages':{},
+      'submitHandler':function( form){
+         var url = baseUrl + 'user/save';
+         var data = $( '#user_save').serialize();
+         $.ajax({
+            url:url,
+            data:data,
+            type:'POST',
+            dataType:'json',
+            success:function( data){
+               if( data.status){
+                  alert( '操作成功');
+                  window.location.href = document.referrer;
+               }
+            }
+         });
+      }
+   });
+
    $('#article_save').validate({
       'rules':{},
       'messages':{},
