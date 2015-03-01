@@ -128,6 +128,16 @@
 				$this->CI->db->order_by( $param['orderby']['sort'] , $param['orderby']['order']);
 			}
 
+			if( isset( $param['like'])){
+				$this->CI->db->like( $param['like'][0] , $param['like'][1]);
+			}
+
+			if( isset( $param['or_like']) && !empty( $param['or_like'])){
+				foreach ($param['or_like'] as $key => $value) {
+					$this->CI->db->or_like( $key , $value);
+				}
+			}
+
 			if( isset( $param['select']) && !empty( $param['select']))
 				$this->CI->db->select( $param['select']);
 
@@ -148,6 +158,17 @@
 					$this->CI->db->where( $k , $v);
 				}
 			}
+
+			if( isset( $param['like'])){
+				$this->CI->db->like( $param['like'][0] , $param['like'][1]);
+			}
+
+			if( isset( $param['or_like']) && !empty( $param['or_like'])){
+				foreach ($param['or_like'] as $key => $value) {
+					$this->CI->db->or_like( $key , $value);
+				}
+			}
+
 			return $this->CI->db->count_all_results( $param['tablename']);
 		}
 

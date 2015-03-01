@@ -22,6 +22,7 @@
     baseUrl = "<?php echo base_url();?>";
     parentId = "<?php echo @$parentid?$parentid:0;?>";
     catid = "<?php echo @$catid?$catid:0;?>";
+    jname = "<?php echo @$jname;?>";
   </script>
   <script src="<?php echo ADMIN_JS_PATH?>jquery-1.10.2.min.js"></script>
   <script src="<?php echo ADMIN_JS_PATH?>jquery-migrate-1.2.1.min.js"></script>

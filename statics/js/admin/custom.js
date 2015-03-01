@@ -418,12 +418,15 @@ jQuery(document).ready(function() {
       }
    });
 
-   $( '#user_save').validate({
-      'rules':{},
-      'messages':{},
-      'submitHandler':function( form){
-         var url = baseUrl + 'user/save';
-         var data = $( '#user_save').serialize();
+   if( jname){
+      $( '#jname').val( jname);
+   }
+/*添加 编辑节点*/
+   $('#jiedian_save').validate({
+      
+      'submitHandler':function(){
+         var data = $( '#jiedian_save').serialize();
+         var url = baseUrl + 'member/save_jiedian';
          $.ajax({
             url:url,
             data:data,
@@ -432,7 +435,56 @@ jQuery(document).ready(function() {
             success:function( data){
                if( data.status){
                   alert( '操作成功');
-                  window.location.href = document.referrer;
+                  window.location.href = baseUrl + 'member/mana';
+               }
+            }
+         });
+      }
+   });
+/*用户页面*/
+   $('#user_save').validate({
+      'rules':{
+         'username':{
+            'required':true
+         },
+         'confirm_pwd':{
+            'equalTo':'#password'
+         },
+         'tname':{
+            'required':true
+         },
+         'mobile':{
+            'required':true,
+            'digits':true
+         }
+      },
+      'messages':{
+         'username':{
+            'required':'请填写用户名'
+         },
+         'confirm_pwd':{
+            'equalTo':'两次密码输入不一致'
+         },
+         'tname':{
+            'required':'请填写姓名'
+         },
+         'mobile':{
+            'required':'请填写手机号码',
+            'digits':'请填写正确的手机号码'
+         }
+      },
+      'submitHandler':function(){
+         var data = $( '#user_save').serialize();
+         var url = baseUrl + 'member/save';
+         $.ajax({
+            url:url,
+            data:data,
+            type:'POST',
+            dataType:'json',
+            success:function( data){
+               if( data.status){
+                  alert( '操作成功');
+                  window.location.href = baseUrl + 'member/mana';
                }
             }
          });
@@ -559,4 +611,38 @@ function deleteOneMsg( tableName , id){
          }
       }
    });
+}
+
+/*查看节点函数*/
+function setContent( jid){
+   var url = baseUrl + 'member/show_jiedian';
+   var data = 'jid=' + jid;
+   $.ajax({
+      url:url,
+         data:data,
+         type:'POST',
+         dataType:'html',
+         success:function( data){
+            $( '#jiedian_content').html( data);            
+         }
+   });
+}
+
+/*用户搜索函数*/
+function searchMember(){
+   var keyword = $('input[name="keyword"]').val();
+   if( keyword != ''){
+      var url = baseUrl + 'member/search';
+      var data = 'keyword='+keyword;
+      $.ajax({
+         url:url,
+         data:data,
+         type:'POST',
+         dataType:'html',
+         success:function( data){
+            $( '#table2').html( data);
+            $( '.pagination').hide();
+         }
+      });
+   }
 }
