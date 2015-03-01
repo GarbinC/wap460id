@@ -10,11 +10,17 @@ class Index extends CI_Controller {
 	public function index(){
 		$this->_data['banner_msg'] = $this->common->getMsg( array( 'tablename' => 'adv' , 'orderby' =>array( 'order' => 'desc' , 'sort' =>'sortrank') ));
 		$this->_data['category_msg'] = $this->category->getIndexCategory();
-		$this->_data['enter460_msg'] = $this->common->getOneMsg( array(
+		/*$this->_data['enter460_msg'] = $this->common->getOneMsg( array(
 				'tablename' => 'article',
 				'where' => array( 'catid' => 31),
 				'orderby' => array( 'order' => 'desc' , 'sort' => 'sortrank'),
 				'limit' => 1
+			));*/
+		$this->_data['news_msg'] = $this->common->getMsg(array(
+				'tablename'=>'article',
+				'where' => array( 'catid' => 31),
+				'orderby' =>array( 'order' => 'desc' , 'sort' =>"sortrank"),
+				'limit' =>2
 			));
 		$this->_data['team_msg'] = $this->common->getMsg( array(
 				'tablename'=>'article',

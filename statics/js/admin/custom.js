@@ -513,12 +513,6 @@ jQuery(document).ready(function() {
    });
 
    $( '#adv_save').validate({
-      'rules':{
-
-      },
-      'messages':{
-
-      },
       'submitHandler':function( form){
          var url = baseUrl + 'adv/save_adv';
          var data = $( '#adv_save').serialize();

@@ -44,7 +44,8 @@ a {
 	font-weight:normal;
 }
 .ui-bar-a, .ui-page-theme-a .ui-bar-inherit, html .ui-bar-a .ui-bar-inherit, html .ui-body-a .ui-bar-inherit, html body .ui-group-theme-a .ui-bar-inherit{
-	background-color:#990000;
+	#background-color:#990000;
+	background-color:black;
 	font-weight:normal;
 	font-size:20px;
 	color:#FFF;

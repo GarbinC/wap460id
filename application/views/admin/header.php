@@ -85,10 +85,10 @@
       <h5 class="sidebartitle">导航菜单</h5>
       <ul class="nav nav-pills nav-stacked nav-bracket">
         <!-- <li class="active"><a href="index.html"><i class="fa fa-home"></i> <span>Dashboard</span></a></li>-->
-        <li class=""><a href="<?php echo site_url( 'member/mana');?>"><i class="fa fa-home"></i> <span>会员管理</span></a></li>
-        <li class=""><a href="<?php echo site_url( 'category/mana');?>"><i class="fa fa-home"></i> <span>栏目管理</span></a></li>
-        <li class=""><a href="<?php echo site_url( 'article/mana');?>"><i class="fa fa-home"></i> <span>文章管理</span></a></li>
-        <li class=""><a href="<?php echo site_url( 'adv/mana');?>"><i class="fa fa-home"></i> <span>广告管理</span></a></li>
+        <li class=""><a href="<?php echo site_url( 'member/mana');?>"><i class="glyphicon glyphicon-user"></i> <span>会员管理</span></a></li>
+        <li class=""><a href="<?php echo site_url( 'category/mana');?>"><i class="glyphicon glyphicon-book"></i> <span>栏目管理</span></a></li>
+        <li class=""><a href="<?php echo site_url( 'article/mana');?>"><i class="glyphicon glyphicon-font"></i> <span>文章管理</span></a></li>
+        <li class=""><a href="<?php echo site_url( 'adv/mana');?>"><i class="glyphicon glyphicon-star"></i> <span>广告管理</span></a></li>
         <li class="nav-parent"><a href="layouts.html"><i class="fa fa-laptop"></i> <span>系统设置</span></a>
             <ul class="children">
                 <li><a href="<?php echo site_url( 'admin/change_pwd');?>"><i class="fa fa-caret-right"></i>密码修改</a></li>

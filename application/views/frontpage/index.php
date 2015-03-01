@@ -55,23 +55,7 @@
            
          </ul> 
        </div>   
-       <div class="index_02"> 
-        <ul>
-          
-                    <li>
-                     <a href="<?php echo site_url( 'content/show/' . $enter460_msg['id'])?>">
-                         <div class="pic"><img src="<?php echo @$category_msg[2]['imageurl']?>" /><div class="title">走进460</div></div>
-                           <h2>走进460</h2>
-                           <p><?php echo mb_substr(  $enter460_msg['description'] , 0 , 40 , 'utf-8');?>...</p>
-                         <div class="clear"></div>
-                     </a>
-                  </li>
-               
-            
-         
-       </ul> 
-      </div>
-      
+    
       <div class="index_03">
           <ul>
               
@@ -91,6 +75,28 @@
                 
           </ul>
       </div>
+
+       <div class="index_02"> 
+        <ul>
+            <?php
+              if( isset( $news_msg) && !empty( $news_msg)){
+                foreach ($news_msg as $key => $value) {
+                  $image = get_first_img( $value['content']);
+                  echo '<li>
+                     <a href="'.site_url( 'content/show/' . $value['id']).'">
+                         <div class="pic"><img src="'.$image.'" /><div class="title"></div></div>
+                           <h2>'.$value['title'].'</h2>
+                           <p>'.mb_substr( $value['description'] , 0 , 40 , 'utf-8').'...</p>
+                         <div class="clear"></div>
+                     </a>
+                  </li>';
+                }
+              }
+            ?>                                                    
+       </ul> 
+      </div>
+
+
       <div class="clear"></div>
       <div style="margin-bottom:0px;" class="index_04">
          <h1>460设计案例</h1>

@@ -9,6 +9,13 @@
 			$this->load->model( 'm_category' , 'category');
 		}
 
+		/*会员登录*/
+		public function login(){
+			$this->load->view( 'frontpage/header' , $this->_data);
+			$this->load->view( 'frontpage/login');
+			$this->load->view( 'frontpage/footer');
+		}
+
 		public function show(){
 			$id = intval( $this->uri->segment(3));
 			if( !$id)
